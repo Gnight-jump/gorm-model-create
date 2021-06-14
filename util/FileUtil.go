@@ -42,7 +42,7 @@ func MakeFile(filePath string, fileName string, content string, cover bool) {
 	if err != nil {
 		panic(err)
 	}
-	fmt.Println("目标： ", filePath+fileName, " 已经生成！")
+	fmt.Println("目标： ", fileName, " 已经生成！")
 }
 
 // 检查文件是否存在
