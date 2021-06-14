@@ -10,8 +10,7 @@ import (
 )
 
 // 生成go文件，参数为：文件路径名，文件内容，原有的是否覆盖（false为不覆盖）
-func MakeGoModel(filePath string, fileName string, content string, cover bool) {
-
+func MakeFile(filePath string, fileName string, content string, cover bool) {
 	// 如果不存在就递归创建目录
 	if !checkPathIsExist(filePath) {
 		err := os.MkdirAll(filePath, os.ModePerm)
@@ -43,7 +42,7 @@ func MakeGoModel(filePath string, fileName string, content string, cover bool) {
 	if err != nil {
 		panic(err)
 	}
-	fmt.Println("目标： ", fileName, " 已经生成！")
+	fmt.Println("目标： ", filePath+fileName, " 已经生成！")
 }
 
 // 检查文件是否存在

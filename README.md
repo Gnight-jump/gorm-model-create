@@ -26,3 +26,21 @@ GModel:
     - "screenshot"
     - "omgphone"
 ```
+
+# 命令行 使用说明
+
+一、初始化`conf.yaml`
+```go
+// 默认初始化方式
+go run main.go -isInit true
+// 使用非默认路径(在conf目录下生成conf.yaml)
+go run main.go --isInit -initPath "./config"
+```
+
+二、生成`model`
+```go
+// 默认方式(配合默认初始化方式)
+go run main.go
+// 使用非默认路径(在conf目录下生成conf.yaml)
+go run main.go -confPath "./config"
+```

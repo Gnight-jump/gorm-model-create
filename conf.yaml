@@ -13,7 +13,6 @@ GModel:
   ModelCover: true
   #存储的package名
   PackageName: "models"
-  #需要生成model的表名，支持多个
+  #需要生成model的表名，支持多个，支持全库扫描（不输入任何参数即可）
   TableName:
-    - "screenshot"
-    - "omgphone"
+    - "sreenshot_ods"

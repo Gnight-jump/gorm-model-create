@@ -26,3 +26,21 @@ TableName:
 - "screenshot"
 - "omgphone"
 ```
+
+# Command line instructions
+
+一、initialize `conf.yaml`
+```go
+// Default initialization mode
+go run main.go -isInit true
+// Use a non-default path (generate conf.yaml in the ./config directory)
+go run main.go --isInit -initPath "./config"
+```
+
+二、 generate `model`
+```go
+// Default mode (with default initialization mode)
+go run main.go
+// Use a non-default path (generate conf.yaml in the./config directory)
+go run main.go -confPath "./config"
+```

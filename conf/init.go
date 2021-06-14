@@ -11,8 +11,8 @@ import (
 
 var Tconf Conf
 
-func Init() error {
-	ReConf, err := ioutil.ReadFile("./conf.yaml")
+func InitFile(path string) error {
+	ReConf, err := ioutil.ReadFile(path)
 	if err != nil {
 		fmt.Print(err)
 		return err

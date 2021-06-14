@@ -33,7 +33,7 @@ func getTables(db *gorm.DB, tableNames []string, dbName string) []Table {
 
 	// 获取指定表信息
 	var tables []Table
-	if tableNamesStr == "" {
+	if tableNamesStr == "''" {
 		db.Raw("SELECT TABLE_NAME as Name,TABLE_COMMENT as Comment FROM information_schema.TABLES " +
 			"WHERE table_schema='" + dbName + "';").Find(&tables)
 	} else {
@@ -87,5 +87,5 @@ func generateModel(gModel *conf.GModel, table Table, fields []Field) {
 
 	// 文件生成
 	fileName := gModel.StorePath + util.Marshal(table.Name) + ".go"
-	util.MakeGoModel(gModel.StorePath, fileName, builder.String(), gModel.ModelCover)
+	util.MakeFile(gModel.StorePath, fileName, builder.String(), gModel.ModelCover)
 }
